@@ -4,7 +4,7 @@
 \chapter{Syntax}
 \label{ch:aml-base-syntax}
 
-The syntax of \AmlBase is based on Lisp-1, the so-called ``S-expressions'' (shorter for ``symbolic expressions''\footnote{Which we will not abbreviate further as ``sexprs''.}) and blatantly borrowing from languages such as Scheme, Racket or Clojure, while maintaining similarities with the \Aml and \AmlCore languages. 
+The syntax of \AmlBase is based on Lisp-1, the so-called ``S-expressions'' (shorter for ``symbolic expressions'') and blatantly borrowing from languages such as Scheme, Racket, Common Lisp or Clojure, while maintaining certain similarities with the \Aml and \AmlCore languages. 
 
 
 
@@ -105,8 +105,6 @@ A sequence of source characters that does not start with any of the sequences de
 
 A sequence of source characters that starts with ``\lstinline!|!'' is parsed as a (verbatim) symbol until a matching ``\lstinline!|!'' is found. If a ``\lstinline!|!'' should appear inside the symbol, it has to be preceded by a ``\lstinline!\!'', and that character is the only character omitted from the resulting symbol.\footnote{This is why quasiquote must not be followed by another backtick.}
 
-A sequence of source characters that starts with ``\lstinline!``!'' is parsed as a (verbatim) symbol until a matching ``\lstinline!``!'' is found.\footnote{This is supposed to be used in order to turn off ``keyword'' status of the symbol, and is present in \AmlBase for compatibility with \Aml.}
-
 Symbols that consist entirely of ``operator'' characters (Unicode character classes Sm, So, except for \lstinline!U+0060!) are treated specially, TBD\footnote{This is yet to be properly defined, but generally a property will be added to the form marking it ``operator''.}. If a ``\lstinline!|!'' character is followed and/or preceded entirely by ``operator'' characters until a delimiter, then the ``\lstinline!|!'' is considered to be a part of the resulting symbol.
 
 % TODO: replace Da.ta with "symbol chain", making it a (symbols Da ta) ?
@@ -120,9 +118,8 @@ Symbols that consist entirely of ``operator'' characters (Unicode character clas
   \lstinline!#%Plum! & reads equal to \lstinline!(string->symbol "#%Plum")! \\
   \lstinline!#%|Plum's good|! & reads equal to \lstinline!(string->symbol "#%Plum's good")! \\
   \lstinline!string->symbol! & reads equal to \lstinline!(string->symbol "string->symbol")! \\
-  \lstinline[deletekeywords={is}]!|a long symbol|! & reads equal to \lstinline[deletekeywords={is}]!(string->symbol "a long symbol")! \\
-  \lstinline[deletekeywords={is}]!|the \\ is included|! & reads equal to \lstinline[deletekeywords={is}]!(string->symbol "the \ is included")! \\
-  \lstinline[deletekeywords={begin}]!``begin``! & reads equal to \lstinline[deletekeywords={is}]!(string->symbol "begin")! \\
+  \lstinline!|a long symbol|! & reads equal to \lstinline!(string->symbol "a long symbol")! \\
+  \lstinline!|the \\ included|! & reads equal to \lstinline!(string->symbol "the \ included")! \\
   \lstinline!|>! & reads equal to \lstinline!(string->symbol "|>")! \\
   \lstinline!<|! & reads equal to \lstinline!(string->symbol "<|")! \\
   \lstinline@hello| |world!@ & reads equal to \lstinline@(string->symbol "hello world!")@\footnote{This comes from Racket, and Aml guidelines would suggest to use the symbol delimiter ``\lstinline!|!'' around the whole symbol, not in the middle of it.} \\

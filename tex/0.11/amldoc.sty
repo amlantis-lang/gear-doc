@@ -104,13 +104,11 @@
 %\setsansfont{Alegreya Sans}[Scale=MatchLowercase]
 %\setmonofont[Scale=MatchLowercase,Mapping=]{Fira Code}
 %\setmonofont{Fira Code}[
-\setmonofont{Cascadia Code}[
-  %BoldFont=Fira Code Bold,%
-  Scale=MatchLowercase,%
+\setmonofont{Monaspace Xenon}[
+  Scale=0.75,%
   Mapping=,%
-  Contextuals=Alternate, % Activate the calt feature 
 ]
-\setmathfont(Digits,Latin,Greek)[Scale=MatchUppercase]{Linux Libertine O}
+\setmathfont(Digits,Latin,Greek)[Scale=MatchLowercase]{Linux Libertine O}
 \newfontfamily\headingfont[]{Alegreya}
 \newfontfamily\chapterfont[]{Alegreya Sans}
 \renewcommand{\maketitlehooka}{\headingfont}
@@ -347,162 +345,9 @@
   morecomment=[n]{\{-}{-\}},%
 }[keywords,comments]
 
-
-\lstdefinestyle{FiraCodeStyle}{
-  basewidth=0.58em,
-  literate=
-    {www}{{www}}3
-    {**}{{**}}2
-    {***}{{***}}3
-%    {**/}{{**/}}3 % Removed in Fira Code v1.206
-    {*>}{{*>}}2
-%    {*/}{{*/}}2 % Interferes with comment highlighting
-%    {\\\\}{{\textbackslash\textbackslash}}2 % Removed in Fira Code v1.206
-%    {\\\\\\}{{\textbackslash\textbackslash\textbackslash}}3 % Removed in Fira Code v1.206
-%    {\{-}{{\{-}}2 % Removed in Fira Code v1.206
-%    {[]}{{[]}}2 % Removed in Fira Code v1.206
-    {::}{{::}}2
-    {:::}{{:::}}3
-    {:=}{{:=}}2
-    {!!}{{!!}}2
-%    {!!!}{{!!!}}3 % Removed in Fira Code v1.206
-    {!=}{{!=}}2
-    {!==}{{!==}}3
-%    {-\}}{{-\}}}2 % Removed in Fira Code v1.206
-    {--}{{--}}2
-    {---}{{---}}3
-    {-->}{{-->}}3
-    {->}{{->}}2
-    {->>}{{->>}}3
-    {-<}{{-<}}2
-    {-<<}{{-<<}}3
-    {-~}{{-\textasciitilde}}2
-    {\#\{}{{\#\{}}2
-    {\#[}{{\#[}}2
-    {\#\#}{{\#\#}}2
-    {\#\#\#}{{\#\#\#}}3
-    {\#\#\#\#}{{\#\#\#\#}}4
-    {\#(}{{\#(}}2
-    {\#?}{{\#?}}2
-    {\#_}{{\#\_}}2
-    {\#_(}{{\#\_(}}3
-    {.-}{{.-}}2
-    {.=}{{.=}}2
-    {..}{{..}}2
-    {..<}{{..<}}3
-    {...}{{...}}3
-    {?=}{{?=}}2
-    {??}{{??}}2
-%    {???}{{???}}3 % Removed in Fira Code v1.206
-%    {;;}{{;;}}2 % Interferes with comment highlighting
-%    {;;;}{{;;;}}3 % Removed in Fira Code v1.206
-%    {/*}{{/*}}2 % Interferes with comment highlighting
-%    {/**}{{/**}}3 % Removed in Fira Code v1.206
-    {/=}{{/=}}2
-    {/==}{{/==}}3
-    {/>}{{/>}}2
-%    {//}{{//}}2 % Interferes with comment highlighting
-%    {///}{{///}}3 % Interferes with comment highlighting
-    {\&\&}{{\&\&}}2
-%    {\&\&\&}{{\&\&\&}}3 % Removed in Fira Code v1.206
-    {||}{{||}}2
-%    {|||}{{|||}}3 % Removed in Fira Code v1.206
-    {||=}{{||=}}3
-    {|=}{{|=}}2
-    {|>}{{|>}}2
-    {^=}{{\textasciicircum=}}2
-    {$>}{{\$>}}2
-    {++}{{++}}2
-    {+>}{{+>}}2
-    {=:=}{{=:=}}3
-    {==}{{==}}2
-    {===}{{===}}3
-    {==>}{{==>}}3
-    {=>}{{=>}}2
-    {=>>}{{=>>}}3
-%    {=<}{{=<}}2 % Removed in Fira Code v1.206
-    {=<<}{{=<<}}3
-%    {=~}{{=\textasciitilde}}2 % Removed in Fira Code v1.206
-    {=/=}{{=/=}}3
-    {>-}{{>-}}2
-    {>=}{{>=}}2
-    {>=>}{{>=>}}3
-    {>>}{{>>}}2
-    {>>-}{{>>-}}3
-    {>>=}{{>>=}}3
-    {>>>}{{>>>}}3
-    {<*}{{<*}}2
-    {<*>}{{<*>}}3
-    {<|}{{<|}}2
-    {<|>}{{<|>}}3
-    {<$}{{<\$}}2
-    {<$>}{{<\$>}}3
-    {<!--}{{<!--}}4
-    {<-}{{<-}}2
-    {<--}{{<--}}3
-    {<->}{{<->}}3
-    {<+}{{<+}}2
-    {<+>}{{<+>}}3
-    {<=}{{<=}}2
-    {<==}{{<==}}3
-    {<=>}{{<=>}}3
-    {<=<}{{<=<}}3
-    {<>}{{<>}}2
-    {<<}{{<<}}2
-    {<<-}{{<<-}}3
-    {<<=}{{<<=}}3
-    {<<<}{{<<<}}3
-    {<~}{{<\textasciitilde}}2
-    {<~~}{{<\textasciitilde\textasciitilde}}3
-    {</}{{</}}2
-    {~@}{{\textasciitilde @}}2
-    {~-}{{\textasciitilde-}}2
-    {~=}{{\textasciitilde=}}2
-    {~>}{{\textasciitilde>}}2
-    {~~}{{\textasciitilde\textasciitilde}}2
-    {~~>}{{\textasciitilde\textasciitilde>}}3
-%    {~~~}{{\textasciitilde\textasciitilde\textasciitilde}}3 % Removed in Fira Code v1.206
-    {\%\%}{{\%\%}}2
-%    {\%\%\%}{{\%\%\%}}3 % Removed in Fira Code v1.206
-    {<==>}{{<==>}}4
-    {<||}{{<||}}3
-    {<|||}{{<|||}}4
-    {|||>}{{|||>}}4
-    {</>}{{</>}}3
-    {<~>}{{<\textasciitilde>}}3
-    {<-<}{{<-<}}3
-    {>->}{{>->}}3
-    {=!=}{{=!=}}3
-    {+++}{{+++}}3
-    {||>}{{||>}}3
-    {_|_}{{\_|\_}}3
-    {..=}{{..=}}3
-    {!!.}{{!!.}}3
-    {::=}{{::=}}3
-    {<:}{{<:}}2
-    {>:}{{>:}}2
-    {|-}{{|-}}2
-    {|]}{{|]}}2
-    {|\}}{{|\}}}2
-    {__}{{\_\_}}2
-    {?.}{{?.}}2
-    {?:}{{?:}}2
-    {.?}{{.?}}2
-    {\#=}{{\#=}}2
-    {\#!}{{\#!}}2
-    {\#:}{{\#:}}2
-    {-|}{{-|}}2
-    {:<}{{:<}}2
-    {:>}{{:>}}2
-    {]\#}{{]\#}}2
-    {[|}{{[|}}2
-    {\{|}{{\{|}}2
-}
-
 % activate the language and predefine settings
 \lstset{
     language=Aml,%
-    style=FiraCodeStyle,%
     xleftmargin=4mm,%
     aboveskip=4mm,%
     belowskip=4mm,%
@@ -511,7 +356,7 @@
     keepspaces=true,%
     basewidth={0.58em, 0.53em},%
     tabsize=2,%
-    basicstyle=\renewcommand{\baselinestretch}{0.95}\ttfamily,%
+    basicstyle=\renewcommand{\baselinestretch}{0.9}\ttfamily,%
     commentstyle=\itshape\color{gray},%
     keywordstyle=\bfseries,%
     mathescape=true,%
